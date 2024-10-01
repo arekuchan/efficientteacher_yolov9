@@ -3,6 +3,8 @@ from .yolov5_backbone import YoloV5BackBone
 from .yolov6_backbone import YoloV6BackBone
 from .yolov7_backbone import YoloV7BackBone
 from .yolov8_backbone import YoloV8BackBone
+from .yolov9-tiny_backbone import YoloV9TinyBackBone
+
 from .resnet import resnet50
 
 def build_backbone(cfg):
@@ -17,6 +19,8 @@ def build_backbone(cfg):
         return YoloV7BackBone(backbone_cfg)
     elif name == "YoloV8":
         return YoloV8BackBone(backbone_cfg)
+    elif name == "YoloV9-tiny":
+        return YoloV9TinyBackBone(backbone_cfg)
     elif name == "ResNet50":
         return resnet50(backbone_cfg)
     else:
