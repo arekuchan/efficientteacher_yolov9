@@ -4,6 +4,7 @@ import copy
 # from .nanodet_head import NanoDetHead
 # from .nanodet_plus_head import NanoDetPlusHead
 from .yolov5_head import Detect
+from .yolov9_head import YoloV9DualDetect
 # from .yolox_kp_head import DetectYoloXKeypoints
 # from .effidehead import EfficientDetect
 # from .yolov7_head import IDetect
@@ -18,5 +19,7 @@ def build_head(cfg):
     name = head_cfg.Model.Head.name
     if name == "YoloV5":
         return Detect(head_cfg)
+    elif name == "YoloV9":
+        return YoloV9DualDetect(head_cfg)
     else:
         raise NotImplementedError

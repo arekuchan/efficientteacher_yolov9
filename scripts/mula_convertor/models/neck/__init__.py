@@ -19,6 +19,7 @@ import copy
 # from .pan import PAN
 from .yolov5_neck import YoloV5Neck
 from .yolov7_neck import YoloV7Neck
+from .yolov9-tiny_neck import YoloV9DualTinyNeck
 # from .reppan import RepPANNeck 
 # from .ppyoloe_pan import CustomCSPPAN
 # from .tan import TAN
@@ -33,5 +34,7 @@ def build_neck(cfg):
         return YoloV5Neck(fpn_cfg)
     elif name == "YoloV7":
         return YoloV7Neck(fpn_cfg)
+    elif name == "YoloV9-tiny":
+        return YoloV9DualTinyNeck(fpn_cfg)
     else:
         raise NotImplementedError
