@@ -14,8 +14,8 @@ hyp:
   no_aug_epochs: 30
 
 Model:
-  depth_multiple: 1  # multiples don't do anything for my yolov9 implementation
-  width_multiple: 1  
+  depth_multiple: 1.0  # multiples don't do anything for my yolov9 implementation
+  width_multiple: 1.0  
   Backbone: 
     name: 'YoloV9-tiny'
     activation: 'SiLU'

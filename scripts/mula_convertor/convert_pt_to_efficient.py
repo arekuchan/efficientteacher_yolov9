@@ -29,6 +29,8 @@ def convert_yolov5_to_efficient(pt_path='', cfg_path='', save_path='', map_path=
 
         new_yolov5s_weight = {}
         for yolov5_key in yolov5_keys:
+            if yolov5_key not in match_dict:
+                 continue
             yolov5_key_prefix = '.'.join(yolov5_key.split('.')[:2])
             yolov5_key_suffix = '.'.join(yolov5_key.split('.')[2:])
             model_match_key = match_dict[yolov5_key_prefix] + '.' + yolov5_key_suffix
