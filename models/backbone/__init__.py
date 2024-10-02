@@ -3,7 +3,7 @@ from .yolov5_backbone import YoloV5BackBone
 from .yolov6_backbone import YoloV6BackBone
 from .yolov7_backbone import YoloV7BackBone
 from .yolov8_backbone import YoloV8BackBone
-from .yolov9-tiny_backbone import YoloV9TinyBackBone
+from .yolov9_tiny_backbone import YoloV9TinyBackBone
 
 from .resnet import resnet50
 

@@ -1,7 +1,7 @@
 import copy
 # from .shufflenetv2 import ShuffleNetV2
 from .yolov5_backbone import YoloV5BackBone
-from .yolov9-tiny_backbone import YoloV9TinyBackBone
+from .yolov9_tiny_backbone import YoloV9TinyBackBone
 # from .cspresnet import CSPResNet
 # from .oneshot_shuffle import UltraShuffleNetOneShot
 # from .efficientrep import EfficientRep

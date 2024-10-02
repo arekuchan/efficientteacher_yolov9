@@ -19,7 +19,7 @@ import copy
 # from .pan import PAN
 from .yolov5_neck import YoloV5Neck
 from .yolov7_neck import YoloV7Neck
-from .yolov9-tiny_neck import YoloV9DualTinyNeck
+from .yolov9_tiny_neck import YoloV9DualTinyNeck
 # from .reppan import RepPANNeck 
 # from .ppyoloe_pan import CustomCSPPAN
 # from .tan import TAN

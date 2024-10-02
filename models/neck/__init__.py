@@ -18,7 +18,7 @@ from .yolov5_neck import YoloV5Neck
 from .yolov6_neck import YoloV6Neck
 from .yolov7_neck import YoloV7Neck
 from .yolov8_neck import YoloV8Neck
-from .yolov9-tiny_neck import YoloV9DualTinyNeck
+from .yolov9_tiny_neck import YoloV9DualTinyNeck
 
 
 def build_neck(cfg,nas_arch=None,in_channels=None):
