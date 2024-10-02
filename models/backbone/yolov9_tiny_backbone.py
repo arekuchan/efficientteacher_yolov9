@@ -1,7 +1,7 @@
 from models.backbone.common import *
 
 class ELAN1(nn.Module):
-    def __init__(self, c1, c2, c3, c4, act="silu"):  # ch_in, ch_out, number, shortcut, groups, expansion
+    def __init__(self, c1, c2, c3, c4, act=True):  # ch_in, ch_out, number, shortcut, groups, expansion
         super().__init__()
         self.c = c3//2
         self.cv1 = Conv(c1, c3, 1, 1, act=act)
@@ -20,7 +20,7 @@ class ELAN1(nn.Module):
         return self.cv4(torch.cat(y, 1))
     
 class GELAN(nn.Module):
-    def __init__(self, CONV_ACT="silu"):
+    def __init__(self, CONV_ACT=True):
         super(GELAN, self).__init__()
 
         self.cv0 = Conv(3, 16, 3, 2, act=CONV_ACT)

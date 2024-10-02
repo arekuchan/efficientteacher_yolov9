@@ -1555,7 +1555,7 @@ class ELAN(nn.Module):
         return x_merge
     
 class AConv(nn.Module):
-    def __init__(self, c1, c2, act="silu"):  # ch_in, ch_out, shortcut, kernels, groups, expand
+    def __init__(self, c1, c2, act=True):  # ch_in, ch_out, shortcut, kernels, groups, expand
         super().__init__()
         self.cv1 = Conv(c1, c2, 3, 2, 1, act=act)
 
@@ -1690,7 +1690,7 @@ class RepNCSP(nn.Module):
     
 class RepNCSPELAN4(nn.Module):
     # csp-elan
-    def __init__(self, c1, c2, c3, c4, c5=1, act="silu"):  # ch_in, ch_out, number, shortcut, groups, expansion
+    def __init__(self, c1, c2, c3, c4, c5=1, act=True):  # ch_in, ch_out, number, shortcut, groups, expansion
         super().__init__()
         self.c = c3//2
         self.cv1 = Conv(c1, c3, 1, 1, act=act)
