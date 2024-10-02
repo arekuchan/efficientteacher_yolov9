@@ -1,0 +1,42 @@
+# Parameters
+project: 'runs/yolov9-tiny/prototype/'
+adam: False
+epochs: 500
+weights: '/home/alex/Programming/ML_Training/LoL_Champ_Detection/yolov9/yolov9-t-converted.pt'
+prune_finetune: False
+hyp:
+  lr0: 0.01
+  hsv_h: 0.015
+  hsv_s: 0.7
+  hsv_v: 0.4
+  lrf: 0.01
+  warmup_epochs: 3
+  no_aug_epochs: 30
+
+Model:
+  depth_multiple: 1  # multiples don't do anything for my yolov9 implementation
+  width_multiple: 1  
+  Backbone: 
+    name: 'YoloV9-tiny'
+    activation: 'SiLU'
+  Neck: 
+    name: 'YoloV9-tiny' 
+    in_channels: [64, 96, 128]
+    out_channels: [64, 96, 128, 64, 96, 128]
+    activation: 'SiLU'
+  Head: 
+    name: 'YoloV9'
+  anchors: [1] # doesn't do anything for my yolov9 implementation
+Loss:
+  type: 'ComputeLoss'
+
+Dataset:
+  data_name: 'Dataset-A-E-G'
+  train: /home/alex/Programming/ML_Training/LoL_Champ_Detection/yolov9/Dataset-A-E-G/train
+  val: /home/alex/Programming/ML_Training/LoL_Champ_Detection/yolov9/Dataset-A-E-G/valid
+  test: /home/alex/Programming/ML_Training/LoL_Champ_Detection/yolov9/Dataset-A-E-G/test
+  nc: 4  # number of classes
+  np: 0 #number of keypoints
+  names: [ 'Annie', 'Diana', 'Hecarim', 'Wukong' ] 
+  img_size: 1056
+  batch_size: 64

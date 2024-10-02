@@ -6,6 +6,7 @@ from .yolov7_head import IDetect
 from .yolov8_head import YoloV8Detect
 from .yolox_head import YoloXDetect
 from .yolov6_head import YoloV6Detect
+from .yolov9_head import YoloV9DualDetect
 # from .simple_conv_head import SimpleConvHead
 
 
@@ -23,5 +24,7 @@ def build_head(cfg):
         return IDetect(head_cfg)
     elif name == "YoloV8":
         return YoloV8Detect(head_cfg)
+    elif name == "YoloV9":
+        return YoloV9DualDetect(head_cfg)
     else:
         raise NotImplementedError
