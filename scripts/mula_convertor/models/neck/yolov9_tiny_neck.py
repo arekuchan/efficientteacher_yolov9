@@ -1,5 +1,4 @@
 import torch
-import torch.cat
 import torch.nn as nn
 from ..backbone.common import Conv, RepNCSPELAN4, Concat, AConv
 from utils.general import make_divisible
