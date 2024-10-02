@@ -102,6 +102,6 @@ def convert_efficient_to_yolov5(efficient_path='',  yolov5_path='', save_path=''
 
 if __name__ == '__main__':
     efficientteacherPath = '/home/alex/Programming/ML_Training/LoL_Champ_Detection/efficientteacher_yolov9'
-    convert_yolov5_to_efficient(efficientteacherPath + '/weights/yolov9-t-converted.pt', efficientteacherPath + '/configs/sup/custom/yolov9-tiny-protoype.yaml', efficientteacherPath + "/yolov9-tiny-efficient-format.pt")
+    convert_yolov5_to_efficient(efficientteacherPath + '/weights/yolov9-t-converted.pt', efficientteacherPath + '/configs/sup/custom/yolov9-tiny-protoype.yaml', efficientteacherPath + "/yolov9-tiny-efficient-format.pt", map_path="yolov9-t-map.txt")
     # convert_yolov5_to_efficient( 'yolov5s.pt', 'efficientteacher/configs/sup/public/yolov5s_coco.yaml','efficient-yolov5s.pt')
     # convert_efficient_to_yolov5('efficient-yolov5m.pt', yolov5_path='yolov5m.pt', save_path='test.pt')
