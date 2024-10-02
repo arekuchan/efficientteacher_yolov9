@@ -110,29 +110,29 @@ class YoloV9DualTinyNeck(nn.Module):
 
         x0 = self.sppelan0(large) # 9
         x1 = self.upSamp0(x0)
-        x2 = self.concat(x1, med)
+        x2 = self.concat([x1, med])
 
         x3 = self.repncspelan0(x2) # 12
         x4 = self.upSamp1(x3)
-        x5 = self.concat(x4, small)
+        x5 = self.concat([x4, small])
 
         x6 = self.repncspelan1(x5) # 15
         x7 = self.a0(x6)
-        x8 = self.concat(x7, x3)
+        x8 = self.concat([x7, x3])
 
         x9 = self.repncspelan2(x8) # 18
         x10 = self.a1(x9)
-        x11 = self.concat(x10, x0)
+        x11 = self.concat([x10, x0])
 
         x12 = self.repncspelan3(x11) # 21
 
         x13 = self.sppelan1(large)
         x14 = self.upSamp2(x13)
-        x15 = self.concat(x14, med)
+        x15 = self.concat([x14, med])
 
         x16 = self.repncspelan4(x15) # 25
         x17 = self.upSamp3(x16)
-        x18 = self.concat(x17, small)
+        x18 = self.concat([x17, small])
 
         x19 = self.repncspelan5(x18) # 28
 
